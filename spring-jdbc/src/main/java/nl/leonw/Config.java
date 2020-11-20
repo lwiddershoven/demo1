@@ -15,9 +15,9 @@ public class Config {
         System.out.println("Constructing DataSource");
         PGSimpleDataSource source = new PGSimpleDataSource();
         source.setServerNames(new String[]{"localhost"});
-        source.setDatabaseName("test");
-        source.setUser("testuser");
-        source.setPassword("testpassword");
+        source.setDatabaseName("postgres");
+        source.setUser("postgres");
+        source.setPassword("v3ry_s3cr3t");
         return source;
     }
 
@@ -29,7 +29,8 @@ public class Config {
 
     // Remarks
     // 1. Lots of config for the datasource mixed with code
+    //    That really is not very practical or organised
     // 2. Dependency injection - jdbc template wants ('depends on') datasource and spring
-    //    looks which datasource beans exist.
+    //    looks which datasource beans exist. If 1 @Bean floats around it will be injected.
 
 }
