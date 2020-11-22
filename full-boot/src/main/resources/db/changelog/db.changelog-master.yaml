@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: Leon
+      changes:
+        - sql:
+            sql: CREATE extension IF NOT EXISTS "uuid-ossp"
+  - changeSet:
+      id: 1
+      author: Leon
+      changes:
+        - createTable:
+            tableName: customer
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: uuid_generate_v4()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: Leon
+      changes:
+        - insert:
+            tableName: customer
+            columns:
+              - column:
+                  name: first_name
+                  value: Leon
+              - column:
+                  name: last_name
+                  value: Widdershoven
+
