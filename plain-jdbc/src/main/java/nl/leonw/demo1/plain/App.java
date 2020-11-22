@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class App {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         new App().listPostgresFeatures(); // I'd rather new than use static functions
     }
 
