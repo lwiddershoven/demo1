@@ -11,4 +11,5 @@ public class Config {
     // Just having the maven dependency om spring data JDBC tells Spring we want a datasource and template
 
     // See JdbcTemplateAutoConfiguration
+    // See spring-autoconfigure-metadata.properties
 }
