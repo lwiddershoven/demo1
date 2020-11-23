@@ -3,6 +3,8 @@ package nl.leonw.demo1.fullboot;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +21,9 @@ public interface CustomerRepository extends PagingAndSortingRepository<DBCustome
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table("customer")
 class DBCustomer {
+    @Id
     private UUID id;
     private String firstName;
     private String lastName;
