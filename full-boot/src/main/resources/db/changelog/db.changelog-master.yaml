@@ -42,4 +42,22 @@ databaseChangeLog:
               - column:
                   name: last_name
                   value: Widdershoven
+        - insert:
+            tableName: customer
+            columns:
+              - column:
+                  name: first_name
+                  value: Jan
+              - column:
+                  name: last_name
+                  value: Jansen
+        - insert:
+            tableName: customer
+            columns:
+              - column:
+                  name: first_name
+                  value: Klaas
+              - column:
+                  name: last_name
+                  value: Klaassen
 
