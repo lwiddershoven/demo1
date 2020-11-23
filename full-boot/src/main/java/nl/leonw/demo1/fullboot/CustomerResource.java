@@ -28,7 +28,7 @@ public class CustomerResource {
             value = "Get all customers matching the optional query parameters",
             notes = "The query parameter lastName is optional"
     )
-    public List<Customer> getCustomers(@RequestParam("lastName") Optional<String> lastName) {
+    public List<Customer> getCustomers(@RequestParam(value = "lastName", required=false) Optional<String> lastName) {
         List<DBCustomer> dbCustomers = lastName
                 .map(name -> customerRepository.findByLastName(name))
                 .orElseGet(() -> customerRepository.findAll());
